@@ -6,6 +6,7 @@ expertMode = true
 channel = "stable-25_05"
 
 [workflows]
+runButton = "Project"
 
 [[workflows.workflow]]
 name = "l"
@@ -14,3 +15,31 @@ author = 33451228
 
 [[workflows.workflow.tasks]]
 task = "packager.installForAll"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "discord-bot"
+
+[[workflows.workflow]]
+name = "discord-bot"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd djs-bot && npm run bot"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[[ports]]
+localPort = 8080
+externalPort = 8080
