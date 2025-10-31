@@ -8,10 +8,9 @@ channel = "stable-25_05"
 [workflows]
 
 [[workflows.workflow]]
-name = "js"
+name = "l"
 mode = "sequential"
 author = 33451228
 
 [[workflows.workflow.tasks]]
-task = "packager.installForLanguage"
-args = "nodejs"
+task = "packager.installForAll"
