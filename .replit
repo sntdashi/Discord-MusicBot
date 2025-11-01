@@ -9,14 +9,6 @@ channel = "stable-25_05"
 runButton = "Project"
 
 [[workflows.workflow]]
-name = "l"
-mode = "sequential"
-author = 33451228
-
-[[workflows.workflow.tasks]]
-task = "packager.installForAll"
-
-[[workflows.workflow]]
 name = "Project"
 mode = "parallel"
 author = "agent"
